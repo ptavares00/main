@@ -1,5 +1,6 @@
 import numpy as np
-
+import scipy
+import numba
 
 def householder_elim(q, a, i_min):
     N = len(a[:, 0]) - i_min
