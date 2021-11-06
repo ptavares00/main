@@ -2,13 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def exponential_sample(x, alpha=1):
-    signal = np.random.choice([-1, 1], x.size)
-    return signal * np.log(1 - 2 * x) / alpha
+def exponential_sample(n, alpha=1):
+    x = np.random.random_sample(n)
+    sign = np.random.choice([-1, 1], n)
+    return sign * np.log(1 - x) / alpha
 
 
-x = np.random.random_sample(100000)
-sample = exponential_sample(x)
+if __name__ == "__main__":
+    sample = exponential_sample(100000)
 
-plt.hist(sample, bins=100)
-plt.show()
+    plt.hist(sample, bins=100)
+    plt.show()
